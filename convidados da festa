@@ -57,6 +57,8 @@ inclua biblioteca Util --> u
         escreva("deseja sair da lista?")
         leia(sl)
         }enquanto(sl!="sim")
+	
+	pare
 				
 				
 
