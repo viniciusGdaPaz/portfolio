@@ -4,9 +4,9 @@ inclua biblioteca Util --> u
 	cadeia convidados[100]
 	inteiro opcao  
 	cadeia nome
-	cadeia apa
-	cadeia rem
-	logico ver
+	cadeia sl
+	cadeia remova
+  inteiro ndc=0
 	funcao inicio()
 	{
 	 faca {
@@ -30,6 +30,7 @@ inclua biblioteca Util --> u
 					se(convidados[i] == "")
 					{
 						convidados[i] = nome
+            ndc++
 						pare
 					}
 					
@@ -42,54 +43,42 @@ inclua biblioteca Util --> u
 			caso 2:
 				limpa() 
 				escreva("Listar\n")
-				para(inteiro i=0; i < 100; i++){
+				para(inteiro f=0; f <= ndc; f++){
 					
-						se(convidados[i] != "")
-						{
-							escreva(i+1, "º convidado: ",convidados[i], "\n")
-						}
-						senao se(convidados[i] == "")
-						{
-							para(inteiro j=i; j < 100-i; j++){
-								inteiro posi = (j - 1) +1
-								se(convidados[j] == "")
-								{
-									ver = falso
-								}
-								senao se(convidados[j] != "")
-								{
-									ver = verdadeiro
-								}
-								se(ver == verdadeiro)
-								{
-									escreva(posi, "º convidado: ",convidados[j], "\n")
-								}
-							}
-							pare
-						}
-				}
 				
-				pare
+					
+					escreva(f+1, "º convidado: ",convidados[f], "\n")
+						
+						
+							
+						
+				}
+        faca{
+        escreva("deseja sair da lista?")
+        leia(sl)
+        }enquanto(sl!=sim)
+				
+				
 
 			caso 3:
 				limpa()
 				escreva("Remover\n")
 				escreva("Nome que deseja remover: ")
-				leia(rem)
-				para(inteiro i=0; i < 100; i++){
-					se(convidados[i] == rem)
+				leia(remova)
+				para(inteiro j=0; j <= ndc; j++){
+					se(convidados[j] == remova)
 					{
-						convidados[i] = ""
+						convidados[j] = ""
 					}
 				}
 				pare
 
 			caso 4:
-				escreva("Fim do programa! Merci!")
+				escreva("Fim do programa!")
 				pare
 				
 			caso contrario: 
-				escreva("Essa função não existe\n")
+				escreva("Função não existente \n")
 				u.aguarde(1000)
 				limpa()
 				pare
