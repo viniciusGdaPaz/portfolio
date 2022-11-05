@@ -56,7 +56,7 @@ inclua biblioteca Util --> u
         faca{
         escreva("deseja sair da lista?")
         leia(sl)
-        }enquanto(sl!=sim)
+        }enquanto(sl!="sim")
 				
 				
 
