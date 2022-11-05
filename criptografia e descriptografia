@@ -5,7 +5,6 @@ programa
 		inteiro chave = 0
 	 	cadeia frase
 	 	cadeia res 
-    cadeia sdp
 
 	funcao inicio()
 	{
