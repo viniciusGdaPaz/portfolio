@@ -6,17 +6,28 @@ inclua biblioteca Util --> u
 	cadeia nome
 	cadeia sl
 	cadeia remova
+	inteiro esp = 0
   inteiro ndc=0
 	funcao inicio()
 	{
 	 faca {
-		escreva("\n==========MENU========||\n")
-		escreva("[ 1 ] Cadastrar Pessoa||\n")
-		escreva("[ 2 ] Listar Pessoas  ||\n")
-		escreva("[ 3 ] Remover Pessoas ||\n")
-		escreva("[ 4 ] Sair            ||\n")
-		escreva("======================||\n")
+	 	
+		escreva("\n=============MENU============||\n")
+		escreva("[ 1 ] Cadastrar Pessoa       ||\n")
+		escreva("[ 2 ] Listar Pessoas         ||\n")
+		escreva("[ 3 ] Remover Pessoas        ||\n")
+		escreva("[ 4 ] Sair                   ||\n")
+		escreva("[AVISO]tem ")
+		se(100-ndc<100 ){
+	 		escreva(esp)
+	 	}
+	 	se(100-ndc<10){
+	 		escreva(esp)
+	 	}
+	 	escreva (100-ndc," vagas sobrando|| \n")
+		escreva("=============================||\n")
 		escreva("Opção: ")
+		
 		leia(opcao)
 
 			escolha(opcao){
@@ -30,7 +41,12 @@ inclua biblioteca Util --> u
 					se(convidados[i] == "")
 					{
 						convidados[i] = nome
-            ndc++
+
+						se(ndc>i){
+							ndc=ndc
+							pare
+						}
+                       ndc=i+1
 						pare
 					}
 					
@@ -43,7 +59,7 @@ inclua biblioteca Util --> u
 			caso 2:
 				limpa() 
 				escreva("Listar\n")
-				para(inteiro f=0; f <= ndc; f++){
+				para(inteiro f=0; f < ndc; f++){
 					
 				
 					
@@ -65,7 +81,7 @@ inclua biblioteca Util --> u
 			caso 3:
 				limpa()
 				escreva("Remover\n")
-				escreva("Nome que deseja remover: ")
+				escreva("Nome do usuario que você deseja remover: ")
 				leia(remova)
 				para(inteiro j=0; j <= ndc; j++){
 					se(convidados[j] == remova)
